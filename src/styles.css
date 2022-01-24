@@ -1,0 +1,114 @@
+body {
+  /* background: linear-gradient(to top, hsl(212, 66%, 80%) 0%, #e7f0fd 100%); */
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(
+    109.6deg,
+    rgb(120, 212, 234) 11.2%,
+    rgb(216, 226, 253) 72.1%
+  );
+}
+
+h1 {
+  text-transform: capitalize;
+  font-size: 30px;
+  font-weight: 100px;
+  line-height: 28px;
+  margin-left: 4px;
+}
+ul {
+  margin: 10px 4px 0 4px;
+}
+
+li {
+  font-size: 16px;
+  font-weight: 100px;
+  line-height: 1.2;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.background-image {
+  margin: 0 auto;
+  display: block;
+}
+
+/* .container { 
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}*/
+.weather {
+  position: relative;
+  padding: 8px;
+  margin: 30px auto 30px auto;
+  /*margin: 20px auto;*/
+  display: block;
+  /* margin-top: 50px;*/
+  max-width: 430px;
+  height: 550px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgb(82, 229, 231) 10%,
+    rgb(19, 12, 183) 100%
+  );
+  background-position: 50%;
+  background-size: cover;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 20%);
+}
+
+.temperature {
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 1;
+  margin: 0 0 20px;
+}
+
+.celsius {
+  position: relative;
+  top: -63px;
+  left: 43px;
+}
+
+.fahrenheit {
+  position: relative;
+  top: -63px;
+  left: 43px;
+}
+
+.weather-icon {
+  width: 85px;
+  margin: 0 0 0 50px;
+}
+
+.weather-situation {
+  text-transform: capitalize;
+  font-size: 30px;
+  font-weight: 100;
+  line-height: 1;
+  margin: 0 0 0 20px;
+}
+.searching {
+  margin: 10px 4px 10px 4px;
+  border: none;
+}
+.searching-location {
+  border-radius: 5px;
+  padding: 7px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.today {
+  font-size: 20px;
+  font-weight: 100px;
+  line-height: 28px;
+  margin-left: 4px;
+}
+#forecast-hourly {
+  margin: 10px 4px 0 4px;
+}
