@@ -1,16 +1,19 @@
 body {
-  /* background: linear-gradient(to top, hsl(212, 66%, 80%) 0%, #e7f0fd 100%); */
-
-  /*background: linear-gradient(
+  /* background: linear-gradient(to top, hsl(212, 66%, 80%) 0%, #e7f0fd 100%);
+  background: linear-gradient(
     109.6deg,
     rgb(120, 212, 234) 11.2%,
     rgb(216, 226, 253) 72.1%
   );*/
   font-family: Arial, Helvetica, sans-serif;
-  padding: 100px;
-  background-image: url("src/images/mountains.png");
+  /* padding: 100px; 
+  background-image: url("images/mountains.png");
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover; */
+}
+.body {
+  position: fixed;
+  margin-top: -150px;
 }
 
 h1 {
@@ -36,15 +39,6 @@ a {
   color: black;
 }
 
-p {
-  text-align: center;
-}
-
-/* .background-image { 
-  margin: 0 auto;
-  display: block;
-}*/
-
 /* .container { 
   text-align: center;
   display: block;
@@ -54,9 +48,7 @@ p {
   position: relative;
   padding: 8px;
   margin: 30px auto 5px auto;
-  /*margin: 20px auto;*/
   display: block;
-  /* margin-top: 50px;*/
   max-width: 430px;
   height: 550px;
   border-radius: 20px;
@@ -68,6 +60,22 @@ p {
   background-position: 50%;
   background-size: cover;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 20%);
+}
+
+#searchButton {
+  border-radius: 20px;
+  border: 1px #87c8f8 solid;
+  background-color: #cae2f3;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 200ms ease-in-out;
+}
+
+#searchButton:hover {
+  /* opacity: 0.9; */
+  cursor: pointer;
+  /* transform: scale(1.1); */
+  border: 1px rgb(118, 221, 255) solid;
+  background-color: rgb(133, 222, 251);
 }
 
 .temperature {
@@ -105,11 +113,15 @@ p {
   margin: 10px 4px 10px 4px;
   border: none;
 }
-.searching-location {
-  border-radius: 5px;
+#searching-location {
+  color: black;
   padding: 7px;
   margin-bottom: 10px;
-  border: none;
+  border-radius: 20px;
+  border: 1px #87c8f8 solid;
+  background-color: #cae2f3;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 200ms ease-in-out;
 }
 
 .today {
@@ -120,4 +132,9 @@ p {
 }
 #forecast-hourly {
   margin: 10px 4px 0 4px;
+}
+
+.signature {
+  position: relative;
+  text-align: center;
 }

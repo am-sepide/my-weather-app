@@ -15,11 +15,7 @@
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
-    <!-- <img 
-      class="background-img"
-      src=" https://s3.amazonaws.com/shecodesio-production/uploads/files/000/025/159/original/4.jpg?1642584064;"
-      alt="4season"
-    />-->
+    <img src="images/mountains.png" alt="mountain" class="body" />
     <div class="container">
       <div class="weather">
         <form class="searching">
@@ -28,7 +24,7 @@
               <input
                 type="search"
                 id="searching-location"
-                placeholder="Location..."
+                placeholder="Current location..."
                 autocomplete="off"
                 autofocus="on"
                 class="form-control shadow-sm border-0"
@@ -37,6 +33,7 @@
             <div class="col-4">
               <input
                 type="submit"
+                id="searchButton"
                 value="🔍 Search"
                 class="form-control btn btn-light shadow-sm"
               />
@@ -143,11 +140,11 @@
           </div>
         </footer>
       </div>
-      <p>
-        <a href="https://github.com/am-sepide/my-weather-app" target="_blank">
-          Open-source code</a
-        >, by Sepideh Azizi
-      </p>
+    </div>
+    <div class="signature">
+      <a href="https://github.com/am-sepide/my-weather-app" target="_blank">
+        Open-source code</a
+      >, by Sepideh Azizi
     </div>
     <script src="src/index.js"></script>
   </body>
