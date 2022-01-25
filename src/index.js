@@ -57,8 +57,12 @@ function updateCity(event) {
   event.preventDefault();
   let currentCity = document.querySelector("#searching-location");
   let h1 = document.querySelector("h1");
-  h1.innerHTML = `${currentCity.value}`;
-  searchCity(currentCity.value);
+  if (currentCity.value.length > 0) {
+    h1.innerHTML = `${currentCity.value}`;
+    searchCity(currentCity.value);
+  } else {
+    currentLocation(event);
+  }
 }
 
 // Convert celsius to fahrenheit
@@ -91,6 +95,22 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
 }
+
+// Find the  current location
+
+function currentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showCurrentPosition);
+}
+function showCurrentPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "c14461d947d8a9b418ae1e3abaf3b604";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
 // update all information about new city(city, country, temperature, wind and etc...)
 function showTemperature(response) {
   console.log(response.data);
