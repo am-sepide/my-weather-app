@@ -1,3 +1,5 @@
+// Update Date and time
+
 function formatDay(date) {
   let years = date.getFullYear();
   let month = [
@@ -47,6 +49,8 @@ function formatHour(hour) {
 let currentTime = document.querySelector(".current-time");
 currentTime.innerHTML = formatHour(now);
 
+// Update the searching city
+
 let form = document.querySelector(".searching");
 form.addEventListener("submit", updateCity);
 function updateCity(event) {
@@ -56,6 +60,8 @@ function updateCity(event) {
   h1.innerHTML = `${currentCity.value}`;
   searchCity(currentCity.value);
 }
+
+// Convert celsius to fahrenheit
 
 let tempF = document.querySelector(".fahrenheit");
 tempF.addEventListener("click", changeCelsToFahr);
@@ -78,6 +84,7 @@ function changeFahrToCels(event) {
   currentTemperature.innerHTML = `${currentCelsius}`;
 }
 
+// Add API to code
 function searchCity(city) {
   let apiKey = "c14461d947d8a9b418ae1e3abaf3b604";
   let units = "metric";
