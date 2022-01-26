@@ -19,7 +19,7 @@ body {
 h1 {
   text-transform: capitalize;
   font-size: 30px;
-  font-weight: 100px;
+  font-weight: bold;
   line-height: 28px;
   margin-left: 4px;
 }
@@ -28,8 +28,8 @@ ul {
 }
 
 li {
-  font-size: 16px;
-  font-weight: 100px;
+  font-size: 18px;
+  font-weight: 150px;
   line-height: 1.2;
   list-style: none;
 }
@@ -44,6 +44,10 @@ small {
   text-align: center;
   display: block;
   margin: 0 auto;
+}
+
+hr {
+  border: 3px solid;
 }
 
 /* .container { 
@@ -87,7 +91,7 @@ small {
 
 .temperature {
   font-size: 30px;
-  font-weight: 100;
+  font-weight: bold;
   line-height: 1;
   margin: 0 0 20px;
 }
@@ -96,12 +100,14 @@ small {
   position: relative;
   top: -63px;
   left: 43px;
+  font-weight: bold;
 }
 
 .fahrenheit {
   position: relative;
   top: -63px;
   left: 43px;
+  font-weight: bold;
 }
 
 .weather-icon {
@@ -111,8 +117,8 @@ small {
 
 .weather-situation {
   text-transform: capitalize;
-  font-size: 30px;
-  font-weight: 100;
+  font-size: 25px;
+  font-weight: bold;
   line-height: 1;
   margin: 0 0 0 20px;
 }
@@ -131,13 +137,14 @@ small {
   transition: all 200ms ease-in-out;
 }
 
-.today {
+/*.today {
   font-size: 20px;
-  font-weight: 100px;
+  font-weight: bold;
   line-height: 28px;
   margin-left: 4px;
-}
+}*/
 #forecast-hourly {
+  font-weight: 150px;
   margin: 10px 4px 0 4px;
 }
 
