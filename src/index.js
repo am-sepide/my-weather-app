@@ -71,6 +71,7 @@ let tempF = document.querySelector(".fahrenheit");
 tempF.addEventListener("click", changeCelsToFahr);
 function changeCelsToFahr(event) {
   event.preventDefault();
+
   let currentTemperature = document.querySelector(".temperature");
   let temperature = currentTemperature.innerHTML;
   temperature = Number(temperature);
@@ -78,12 +79,14 @@ function changeCelsToFahr(event) {
   currentTemperature.innerHTML = `${currentFahrenheit}`;
 }
 let tempS = document.querySelector(".celsius");
+
 tempS.addEventListener("click", changeFahrToCels);
 function changeFahrToCels(event) {
   event.preventDefault();
+
   currentTemperature = document.querySelector(".temperature");
   temperature = currentTemperature.innerHTML;
-  emperature = Number(temperature);
+  temperature = Number(temperature);
   let currentCelsius = Math.round(((temperature - 32) * 5) / 9);
   currentTemperature.innerHTML = `${currentCelsius}`;
 }
@@ -93,7 +96,7 @@ function searchCity(city) {
   let apiKey = "c14461d947d8a9b418ae1e3abaf3b604";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(displayWeatherCondition);
 }
 
 // Find the  current location
@@ -108,11 +111,11 @@ function showCurrentPosition(position) {
   let apiKey = "c14461d947d8a9b418ae1e3abaf3b604";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(displayWeatherCondition);
 }
 
 // update all information about new city(city, country, temperature, wind and etc...)
-function showTemperature(response) {
+function displayWeatherCondition(response) {
   console.log(response.data);
   document.querySelector(".temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -130,11 +133,19 @@ function showTemperature(response) {
   document.querySelector(".wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  // document.querySelector(".precipitation").innerHTML = response.data.pop;
+
   document.querySelector(
     "h1"
   ).innerHTML = `${response.data.name}, ${response.data.sys.country} `;
   document.querySelector(".weather-situation").innerHTML =
-    response.data.weather[0].description;
-  document.querySelector(".weather-icon").innerHTML =
-    response.data.weather[0].icon;
+    response.data.weather[0].main; //weather[0].description
+  let iconElement = document.querySelector(".weather-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
+searchCity("Berlin");

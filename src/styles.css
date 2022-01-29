@@ -11,20 +11,19 @@ body {
   background-attachment: fixed;
   background-size: cover; */
 }
-.body {
-  position: fixed;
-  margin-top: -150px;
-}
 
 h1 {
   text-transform: capitalize;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: bold;
   line-height: 28px;
-  margin-left: 4px;
+  /* margin-left: 4px; */
+  padding: 12px;
 }
 ul {
-  margin: 10px 4px 0 4px;
+  /* margin: 10px 4px 0 4px; */
+  margin: 0 0 0 10px;
+  padding: 0;
 }
 
 li {
@@ -32,6 +31,7 @@ li {
   font-weight: 150px;
   line-height: 1.2;
   list-style: none;
+  /* margin-left: -25px; */
 }
 
 a {
@@ -55,9 +55,14 @@ hr {
   display: block;
   margin: 0 auto;
 }*/
+
+.body {
+  position: fixed;
+  margin-top: -150px;
+}
 .weather {
   position: relative;
-  padding: 8px;
+  padding: 10px;
   margin: 30px auto 5px auto;
   display: block;
   max-width: 430px;
@@ -66,10 +71,10 @@ hr {
   background: linear-gradient(
     135deg,
     rgb(82, 229, 231) 10%,
-    rgb(19, 12, 183) 100%
+    rgb(21, 14, 200) 100%
   );
-  background-position: 50%;
-  background-size: cover;
+  /* background-position: 50%;
+  background-size: cover; */
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 20%);
 }
 
@@ -90,13 +95,19 @@ hr {
 }
 
 .temperature {
-  font-size: 30px;
+  font-size: 26px;
   font-weight: bold;
   line-height: 1;
-  margin: 0 0 20px;
+  margin: 0 0 20px 10px;
 }
 
-.celsius {
+.units {
+  position: relative;
+  top: -63px;
+  left: 43px;
+}
+
+/* .celsius {
   position: relative;
   top: -63px;
   left: 43px;
@@ -108,7 +119,7 @@ hr {
   top: -63px;
   left: 43px;
   font-weight: bold;
-}
+} */
 
 .weather-icon {
   width: 85px;
@@ -117,10 +128,10 @@ hr {
 
 .weather-situation {
   text-transform: capitalize;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: bold;
   line-height: 1;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 50px;
 }
 .searching {
   margin: 10px 4px 10px 4px;
@@ -147,6 +158,14 @@ hr {
   font-weight: 150px;
   margin: 10px 4px 0 4px;
 }
+
+/*#bottom-part {
+  margin: 0 auto;
+}
+
+ #daily {
+  padding: 20px;
+} */
 
 /* .signature {
   position: relative;
