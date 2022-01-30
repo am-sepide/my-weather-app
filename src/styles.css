@@ -36,6 +36,8 @@ li {
 
 a {
   text-decoration: none;
+}
+a :hover {
   color: black;
 }
 
@@ -107,19 +109,10 @@ hr {
   left: 43px;
 }
 
-/* .celsius {
-  position: relative;
-  top: -63px;
-  left: 43px;
-  font-weight: bold;
+.units .active {
+  color: black;
+  cursor: default;
 }
-
-.fahrenheit {
-  position: relative;
-  top: -63px;
-  left: 43px;
-  font-weight: bold;
-} */
 
 .weather-icon {
   width: 85px;

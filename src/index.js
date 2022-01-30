@@ -56,9 +56,9 @@ form.addEventListener("submit", updateCity);
 function updateCity(event) {
   event.preventDefault();
   let currentCity = document.querySelector("#searching-location");
-  let h1 = document.querySelector("h1");
+  // let h1 = document.querySelector("h1");
   if (currentCity.value.length > 0) {
-    h1.innerHTML = `${currentCity.value}`;
+    // h1.innerHTML = `${currentCity.value}`;
     searchCity(currentCity.value);
   } else {
     currentLocation(event);
@@ -67,31 +67,30 @@ function updateCity(event) {
 
 // Convert celsius to fahrenheit
 
-let tempF = document.querySelector(".fahrenheit");
+let tempF = document.querySelector("#fahrenheit");
 tempF.addEventListener("click", changeCelsToFahr);
+let celsiusTemperature = null;
 function changeCelsToFahr(event) {
   event.preventDefault();
-
+  fahrenheit.classList.add("active");
+  celsius.classList.remove("active");
   let currentTemperature = document.querySelector(".temperature");
-  let temperature = currentTemperature.innerHTML;
-  temperature = Number(temperature);
-  let currentFahrenheit = Math.round((temperature * 9) / 5 + 32);
-  currentTemperature.innerHTML = `${currentFahrenheit}`;
+  let currentFahrenheit = Math.round((celsiusTemperature * 9) / 5 + 32);
+  currentTemperature.innerHTML = currentFahrenheit;
 }
-let tempS = document.querySelector(".celsius");
 
+let tempS = document.querySelector("#celsius");
 tempS.addEventListener("click", changeFahrToCels);
 function changeFahrToCels(event) {
   event.preventDefault();
-
+  fahrenheit.classList.remove("active");
+  celsius.classList.add("active");
   currentTemperature = document.querySelector(".temperature");
-  temperature = currentTemperature.innerHTML;
-  temperature = Number(temperature);
-  let currentCelsius = Math.round(((temperature - 32) * 5) / 9);
-  currentTemperature.innerHTML = `${currentCelsius}`;
+  currentTemperature.innerHTML = Math.round(celsiusTemperature);
 }
 
 // Add API to code
+
 function searchCity(city) {
   let apiKey = "c14461d947d8a9b418ae1e3abaf3b604";
   let units = "metric";
@@ -115,8 +114,11 @@ function showCurrentPosition(position) {
 }
 
 // update all information about new city(city, country, temperature, wind and etc...)
+
 function displayWeatherCondition(response) {
   console.log(response.data);
+  celsiusTemperature = response.data.main.temp;
+
   document.querySelector(".temperature").innerHTML = Math.round(
     response.data.main.temp
   );
