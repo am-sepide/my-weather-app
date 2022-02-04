@@ -113,27 +113,109 @@ function showCurrentPosition(position) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
+// Add forecast-hourly and forecast-daily HTML in JS
+
+function getForecast(coordinates) {
+  let apiKey = "c14461d947d8a9b418ae1e3abaf3b604";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecastHourly);
+  axios.get(apiUrl).then(displayForecastDaily);
+}
+
+function formatForecastHour(hourstamp) {
+  let date = new Date(hourstamp * 1000);
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  hour = `${hour}:00`;
+  return hour;
+}
+
+function displayForecastHourly(response) {
+  let forecastHourInfo = response.data.hourly;
+  let forecastHourly = document.querySelector("#forecast-hourly");
+  let forecastHourlyHTML = "";
+  forecastHourInfo.forEach(function (forecastHour, index) {
+    if (index !== 0 && index < 5) {
+      forecastHourlyHTML += ` <div class="col-3">
+        <ul>
+          <li>${formatForecastHour(forecastHour.dt)}</li>
+          <li><img src="http://openweathermap.org/img/wn/${
+            forecastHour.weather[0].icon
+          }@2x.png" alt="${
+        forecastHour.weather[0].description
+      }"  width="42" /></li>
+          <li>
+            ${Math.round(forecastHour.temp)}°
+          </li>
+        </ul>
+      </div>`;
+    }
+  });
+  forecastHourly.innerHTML = forecastHourlyHTML;
+}
+
+function formatForecastDay(timestamp) {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  return days[day];
+}
+function displayForecastDaily(response) {
+  console.log(response.data.daily);
+  let forecastDayInfo = response.data.daily;
+  let forecastDaily = document.querySelector("#forecast-daily");
+  let forecastDailyHTML = "";
+  forecastDayInfo.forEach(function (forecastDay, index) {
+    if (index !== 0 && index < 5) {
+      forecastDailyHTML += ` 
+        <ul>
+            <li>${formatForecastDay(forecastDay.dt)}</li>
+            <li><img src="http://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png" alt="${
+        forecastDay.weather[0].description
+      }" class="forecast-icon" width="32" /></li>
+            <li>${Math.round(
+              forecastDay.temp.max
+            )}°/<span class="min">${Math.round(
+        forecastDay.temp.min
+      )}°</span></li>
+        </ul>
+      `;
+    }
+  });
+  forecastDaily.innerHTML = forecastDailyHTML;
+}
+
 // update all information about new city(city, country, temperature, wind and etc...)
 
 function displayWeatherCondition(response) {
   console.log(response.data);
+  getForecast(response.data.coord);
+
   celsiusTemperature = response.data.main.temp;
 
   document.querySelector(".temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector(".min").innerHTML = Math.round(
+  document.querySelector(".min").innerHTML = `${Math.round(
     response.data.main.temp_min
-  );
-  document.querySelector(".max").innerHTML = Math.round(
+  )}°`;
+  document.querySelector(".max").innerHTML = `${Math.round(
     response.data.main.temp_max
-  );
+  )}°`;
   document.querySelector(".feel").innerHTML = Math.round(
     response.data.main.feels_like
   );
   document.querySelector(".humidity").innerHTML = response.data.main.humidity;
   document.querySelector(".wind").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  document.querySelector(".visibility").innerHTML = Math.round(
+    response.data.visibility / 1000
   );
   // document.querySelector(".precipitation").innerHTML = response.data.pop;
 

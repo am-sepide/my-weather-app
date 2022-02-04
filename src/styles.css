@@ -114,6 +114,10 @@ hr {
   cursor: default;
 }
 
+.min {
+  opacity: 0.5;
+}
+
 .weather-icon {
   width: 85px;
   margin: 0 0 0 50px;
@@ -141,26 +145,27 @@ hr {
   transition: all 200ms ease-in-out;
 }
 
-/*.today {
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 28px;
-  margin-left: 4px;
-}*/
 #forecast-hourly {
-  font-weight: 150px;
-  margin: 10px 4px 0 4px;
+  text-align: center;
+  margin: 10px 4px 0 0;
 }
 
-/*#bottom-part {
-  margin: 0 auto;
+#forecast-daily li {
+  /* padding: 0;
+  margin: 0;
+   float: left; */
+  display: inline;
+  position: relative;
+  margin: 0 10px 10px auto;
+}
+#more-info {
+  padding: 10px;
+}
+/*.humidity {
+  padding: 10px;
 }
 
- #daily {
-  padding: 20px;
-} */
-
-/* .signature {
+ .signature {
   position: relative;
   text-align: center;
 } */
