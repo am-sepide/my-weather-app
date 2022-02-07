@@ -56,9 +56,7 @@ form.addEventListener("submit", updateCity);
 function updateCity(event) {
   event.preventDefault();
   let currentCity = document.querySelector("#searching-location");
-  // let h1 = document.querySelector("h1");
   if (currentCity.value.length > 0) {
-    // h1.innerHTML = `${currentCity.value}`;
     searchCity(currentCity.value);
   } else {
     currentLocation(event);
@@ -177,7 +175,7 @@ function displayForecastDaily(response) {
               forecastDay.weather[0].icon
             }@2x.png" alt="${
         forecastDay.weather[0].description
-      }" class="forecast-icon" width="32" /></li>
+      }" class="forecast-icon" width="25" /></li>
             <li>${Math.round(
               forecastDay.temp.max
             )}°/<span class="min">${Math.round(
