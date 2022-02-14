@@ -156,6 +156,14 @@ hr {
   position: relative;
   } */
 
+#forecast-daily {
+  position: relative;
+  left: 40px;
+  font-size: 18px;
+  font-weight: 150px;
+  line-height: 1.2;
+}
+
 #more-info {
   padding: 10px;
 }
