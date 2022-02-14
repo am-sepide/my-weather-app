@@ -169,17 +169,17 @@ function displayForecastDaily(response) {
   forecastDayInfo.forEach(function (forecastDay, index) {
     if (index !== 0 && index < 5) {
       forecastDailyHTML += `<div class="row"> 
-      <div class="clo-3" class="forecast-days">       
+      <div class="col-3" class="forecast-days">       
           <span>${formatForecastDay(forecastDay.dt)} </span>          
       </div>    
-        <div class="clo-1" class="forecast-icon">         
+        <div class="col" class="forecast-icon">         
           <span><img src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
           }@2x.png" alt="${
         forecastDay.weather[0].description
       }" class="forecast-icon" width="25" /> </span>          
       </div>      
-        <div class="clo-2" class="forecast-temp">        
+        <div class="col-2" class="forecast-temp">        
            <span> ${Math.round(
              forecastDay.temp.max
            )}°/<span class="min">${Math.round(
