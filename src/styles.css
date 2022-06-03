@@ -1,15 +1,5 @@
 body {
-  /* background: linear-gradient(to top, hsl(212, 66%, 80%) 0%, #e7f0fd 100%);
-  background: linear-gradient(
-    109.6deg,
-    rgb(120, 212, 234) 11.2%,
-    rgb(216, 226, 253) 72.1%
-  );*/
   font-family: Arial, Helvetica, sans-serif;
-  /* padding: 100px; 
-  background-image: url("images/mountains.png");
-  background-attachment: fixed;
-  background-size: cover; */
 }
 
 h1 {
@@ -17,11 +7,10 @@ h1 {
   font-size: 26px;
   font-weight: bold;
   line-height: 28px;
-  /* margin-left: 4px; */
+
   padding: 12px;
 }
 ul {
-  /* margin: 10px 4px 0 4px; */
   margin: 0 0 0 10px;
   padding: 0;
 }
@@ -31,7 +20,6 @@ li {
   font-weight: 150px;
   line-height: 1.2;
   list-style: none;
-  /* margin-left: -25px; */
 }
 
 a {
@@ -67,8 +55,7 @@ hr {
   padding: 10px;
   margin: 30px auto 5px auto;
   display: block;
-  /* max-width: 430px;
-  height: 550px; */
+
   max-width: max-content;
   height: max-content;
   border-radius: 20px;
@@ -77,8 +64,7 @@ hr {
     rgb(82, 229, 231) 10%,
     rgb(21, 14, 200) 100%
   );
-  /* background-position: 50%;
-  background-size: cover; */
+
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 20%);
 }
 
@@ -152,12 +138,6 @@ hr {
   margin: 10px 4px 0 0;
 }
 
-/* #forecast-daily li {
-  float: left;; 
-  display: inline;
-  position: relative;
-  } */
-
 #forecast-daily {
   position: relative;
   /* left: 40px; */
@@ -169,11 +149,3 @@ hr {
 #more-info {
   padding: 10px;
 }
-/*.humidity {
-  padding: 10px;
-}
-
- .signature {
-  position: relative;
-  text-align: center;
-} */
